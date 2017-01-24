@@ -6,7 +6,7 @@ LABEL Description="This image is used for ADACS Training" Vendor="Swinburne Univ
 
 MAINTAINER Amr Hassan <ahassan@swin.edu.au>
 
-RUN sed -i 's/archive.ubuntu.com/ftp.swin.edu.au/' /etc/apt/sources.list
+#RUN sed -i 's/archive.ubuntu.com/ftp.swin.edu.au/' /etc/apt/sources.list
 RUN echo 'mysql-server mysql-server/root_password password some_pass' | debconf-set-selections
 RUN echo 'mysql-server mysql-server/root_password_again password some_pass' | debconf-set-selections
 RUN apt-get -y update \
