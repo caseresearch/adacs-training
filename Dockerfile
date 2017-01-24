@@ -1,8 +1,7 @@
 # ADACS Tutorials 
-# Version 1.1
 FROM ubuntu:16.04
 
-LABEL Description="This image is used for ADACS Training" Vendor="Swinburne University of Technology" Version="1.1"
+LABEL Description="This image is used for ADACS Training" Vendor="Swinburne University of Technology" Version="1.3"
 
 MAINTAINER Amr Hassan <ahassan@swin.edu.au>
 
