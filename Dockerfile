@@ -29,7 +29,7 @@ COPY install_db.sh /docker_init/install_db.sh
 RUN git clone https://github.com/datacharmer/test_db.git test_db && \
     cd test_db && \
     /docker_init/install_db.sh && \
-    rm -R /test_db
+    rm -R /test_db && \
     rm /docker_init/install_db.sh
 
 
