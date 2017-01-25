@@ -7,7 +7,7 @@ MAINTAINER Amr Hassan <ahassan@swin.edu.au>
 
 
 RUN export DEBIAN_FRONTEND=noninteractive \
-	apt-get -y update \
+	&& apt-get -y update \
 	&& apt-get -y install \
 	mysql-server-5.7 \
 	emacs \
