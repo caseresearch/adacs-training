@@ -36,7 +36,7 @@ RUN git clone https://github.com/datacharmer/test_db.git test_db && \
 RUN wget --quiet https://repo.continuum.io/archive/Anaconda2-4.2.0-Linux-x86_64.sh -O ~/anaconda.sh && \
     /bin/bash ~/anaconda.sh -b && \
     rm ~/anaconda.sh
-# install anaconda?????
+# install anaconda2 version 4.2
 RUN echo 'export PATH="/root/anaconda2/bin:$PATH"' >> ~/.bashrc
 RUN /root/anaconda2/bin/conda install --yes mpi4py=2.0.0
 
