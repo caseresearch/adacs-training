@@ -27,7 +27,8 @@ RUN mkdir /docker_init && mkdir /data && cd /data && \
 	wget --quiet http://www.adacs.org.au/files/AstroInformatics_2017_day1_python_data.zip && \
 	wget --quiet http://www.adacs.org.au/files/AstroInformatics_2017_day1_astropy_files.tar && \
 	unzip AstroInformatics_2017_day1_python_data.zip -d python && \
-	tar -xvf AstroInformatics_2017_day1_astropy_files.tar -C astropy_tutorial
+	tar -xvf AstroInformatics_2017_day1_astropy_files.tar && \
+	mv AstroInformatics astropy_tutorial
 	 
 
 
