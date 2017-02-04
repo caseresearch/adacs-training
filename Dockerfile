@@ -22,7 +22,10 @@ RUN  sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mys
 	&& update-rc.d mysql defaults \
 
 
-RUN mkdir /docker_init
+RUN mkdir /docker_init && mkdir /data && cd /data && \
+	wget --quiet http://www.adacs.org.au/files/AstroInformatics_2017_day1_python_data.zip && \
+	wget --quiet http://www.adacs.org.au/files/AstroInformatics_2017_day1_astropy_files.tar 
+	 
 
 
 COPY install_db.sh /docker_init/install_db.sh
@@ -38,7 +41,8 @@ RUN wget --quiet https://repo.continuum.io/archive/Anaconda2-4.2.0-Linux-x86_64.
     rm ~/anaconda.sh
 # install anaconda2 version 4.2
 RUN echo 'export PATH="/root/anaconda2/bin:$PATH"' >> ~/.bashrc
-RUN /root/anaconda2/bin/conda install --yes mpi4py=2.0.0
+RUN /root/anaconda2/bin/conda install --yes mpi4py=2.0.0 && \
+	/root/anaconda2/bin/conda update --yes pandas
 
 
 COPY init.sh /docker_init/init.sh
